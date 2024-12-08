@@ -15,12 +15,9 @@ export const getPersonas = async (): Promise<Persona[]> => {
 
 // api/usuarios.ts
 
-  
-
-
 export const postPersonas = async (Persona: Persona): Promise<PostPersonaResponse> => {
     try{
-    const { rows } = await client.execute(`insert into Usuarios (nombre, email, password) values('${Persona.nombre}', '${Persona.email}','${Persona.password}') returning *;`);
+    const { rows } = await client.execute(`insert into Usuario (nombre, email, password) values('${Persona.nombre}', '${Persona.email}','${Persona.password}') returning *;`);
     return {message: 'Success'};
     } catch {
         return {message: 'No se pudo insertar los datos'}

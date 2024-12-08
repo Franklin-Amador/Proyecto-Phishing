@@ -8,7 +8,7 @@ export default async function PersonasPage() {
 
   try {
     personas = await getPersonas();
-    console.log(personas);
+
   } catch (error) {
     console.error("Error al obtener personas:", error);
   }

@@ -74,9 +74,9 @@ export default function AmazonLogin() {
           </Collapsible>
         </div>
         <div className="mt-4 pt-4 border-t border-gray-300">
-          <p className="text-xs mb-1">
+          {/* <p className="text-xs mb-1"> */}
             <p className="font-medium text-sm">¿Compras para el trabajo?</p>
-          </p>
+          {/* </p> */}
           <p className="text-sm">
             <Link href="#" className="text-blue-600 hover:underline font-medium">Compra en Amazon Business</Link>
           </p>
