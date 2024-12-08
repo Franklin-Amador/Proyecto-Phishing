@@ -25,7 +25,8 @@ export default async function PersonasPage() {
           <PersonaCard key={persona.id} {...persona} />
         ))
       ) : (
-        <p>No hay personas disponibles.</p>
+        <p>No hay personas disponibles. `${process.env.DADATABASE_URL}`</p>
+        
       )}
     </div>
   );
