@@ -1,16 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import client from "@/utils/bd";
-
-// export const getPersonas = async (): Promise<Persona[]> => {
-//     const { rows } = await client.execute("SELECT * FROM Usuario");
-//     return rows.map(row => ({
-//         id: row.id,
-//         nombre: row.nombre,
-//         password: row.password,
-//         email: row.email
-//     })) as Persona[];
-//   };
-
+export const runtime = "edge";
 
 export const getPersonas = async (): Promise<Persona[]> => {
   try {
