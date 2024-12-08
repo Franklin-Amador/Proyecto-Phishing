@@ -1,15 +1,39 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import client from "@/utils/bd";
 
+// export const getPersonas = async (): Promise<Persona[]> => {
+//     const { rows } = await client.execute("SELECT * FROM Usuario");
+//     return rows.map(row => ({
+//         id: row.id,
+//         nombre: row.nombre,
+//         password: row.password,
+//         email: row.email
+//     })) as Persona[];
+//   };
+
+
 export const getPersonas = async (): Promise<Persona[]> => {
-    const { rows } = await client.execute("SELECT * FROM Usuario");
+  try {
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("Timeout exceeded")), 5000)  // Timeout de 5 segundos
+    );
+
+    const dbQueryPromise = client.execute("SELECT * FROM Usuario");
+
+    const { rows } = await Promise.race([dbQueryPromise, timeoutPromise]) as { rows: any[] };
+
     return rows.map(row => ({
-        id: row.id,
-        nombre: row.nombre,
-        password: row.password,
-        email: row.email
+      id: row.id,
+      nombre: row.nombre,
+      password: row.password,
+      email: row.email
     })) as Persona[];
-  };
+  } catch (error) {
+    console.error("Error al obtener personas:", error);
+    return [];
+  }
+};
+
 
   type PostPersonaResponse = { message: string };
 
