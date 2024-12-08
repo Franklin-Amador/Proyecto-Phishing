@@ -3,7 +3,7 @@
 import { getPersonas } from "@//api/usuarios"; // Reutilizamos la función
 import PersonaCard from "./components/PersonaCard";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default async function PersonasPage() {
     let personas: Persona[] = [];

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import client from "@/utils/bd";
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export const getPersonas = async (): Promise<Persona[]> => {
   try {
