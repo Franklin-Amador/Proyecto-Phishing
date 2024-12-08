@@ -4,6 +4,7 @@ const nextConfig = {
         DATABASE_URL: process.env.URL_TURSO,
         DATABASE_AUTH_TOKEN: process.env.TOKEN,
     },
+    staticPageGenerationTimeout: 60,
 };
 
 export default nextConfig;

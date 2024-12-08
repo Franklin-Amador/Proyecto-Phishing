@@ -6,5 +6,9 @@ const client = createClient({
   authToken: process.env.DATABASE_AUTH_TOKEN,
 });
 
+export const getPersonas = async (): Promise<any[]> => {
+  const { rows } = await client.execute("SELECT * FROM Usuario");
+  return rows;
+};
 
-export default client;
+export default client; getPersonas;
