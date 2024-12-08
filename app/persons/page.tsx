@@ -11,6 +11,8 @@ export default async function PersonasPage() {
   try {
     personas = await getPersonas();
     console.log("Personas:", personas);
+    console.log("url:", process.env.URL_TURSO);
+    console.log("token:", process.env.TOKEN);
   } catch (error) {
     console.error("Error al obtener personas:", error);
   }
