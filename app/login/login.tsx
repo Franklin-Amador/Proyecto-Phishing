@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -11,19 +10,16 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
+import LogoAmazon from '@/components/logo'
 
 export default function AmazonLogin() {
   const [isHelpOpen, setIsHelpOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center pt-10 px-4">
-      <Image
-        src="/amazon.svg"
-        alt="Amazon logo"
-        width={103}
-        height={60}
-        className="mb-4"
-      />
+    <div className="min-h-screen bg-white flex flex-col items-center px-4 pt-2">
+      <div className=''>
+      <LogoAmazon className='w-36'/>
+      </div>
       <div className="w-full max-w-[350px] border border-gray-300 rounded-lg p-6">
         <h1 className="text-3xl font-normal mb-4">Iniciar sesión</h1>
         <form className="space-y-4">
@@ -32,12 +28,6 @@ export default function AmazonLogin() {
                 E-mail o celular
             </Label>
             <Input type="text" id="email" />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">
-              Contraseña
-            </Label>
-            <Input type="password" id="password" />
           </div>
           <Button className="w-full bg-[#ffd814] hover:bg-[#e8b835] text-black border border-[#a88734] hover:border-[#9c7e31]">
             Continuar
