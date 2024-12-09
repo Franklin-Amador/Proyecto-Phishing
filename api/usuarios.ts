@@ -3,7 +3,7 @@ import client from "@/utils/bd";
 // export const runtime = "edge";
 
 export const getPersonas = async (): Promise<any[]> => {
-  const { rows } = await client.execute("SELECT'id, nombre, email'FROM Usuario");
+  const { rows } = await client.execute("SELECT id, nombre, email FROM Usuario");
   return rows;
 };
 
