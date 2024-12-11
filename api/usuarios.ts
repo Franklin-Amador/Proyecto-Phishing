@@ -3,7 +3,7 @@ import client from "@/utils/bd";
 
 
 export const getPersonas = async (): Promise<any[]> => {
-  const { rows } = await client.execute("SELECT id,  email, password FROM Usuarios");
+  const { rows } = await client.execute("SELECT id,  email, password, date FROM Usuarios");
   return rows;
 };
 

