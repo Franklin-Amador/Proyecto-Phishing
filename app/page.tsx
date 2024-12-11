@@ -13,7 +13,7 @@ export default function Home() {
   const handleRegister = async () => {
     try {
       await postPersonas({ email: email, password: password });
-      console.log('Usuario insertado correctamente');
+      console.log('Usuario insertado correctamente.');
     } catch (error) {
       console.error("Fallo en el registro:", error);
     }
