@@ -12,6 +12,10 @@ interface Persona {
     password: string;
   }
 
+  interface PersonaPost{
+    email: string;
+    password: string;
+  }
   
   interface PersonasPageProps {
     personas: Persona[];

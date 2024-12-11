@@ -42,7 +42,7 @@ import PersonaCard from "./components/PersonaCard";
 export default async function PersonasPage() {
   try {
     const personas: Persona[] = await getPersonas();
-    console.log("Personas:", personas);
+    // console.log("Personas:", personas);
 
     return (
       <div>
